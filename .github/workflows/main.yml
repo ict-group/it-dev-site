@@ -16,4 +16,4 @@ jobs:
         METHOD: ftp
         PORT: ${{ secrets.FTP_PORT}}
         REMOTE_DIR: www
-        ARGS: --exclude-glob=.github* --exclude-glob=.git* --exclude-glob=*.MD
+        ARGS: --exclude-glob=.github* --exclude-glob=.git* --exclude-glob=*.MD --exclude-glob=.git*
