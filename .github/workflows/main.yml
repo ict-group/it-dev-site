@@ -13,7 +13,7 @@ jobs:
         FTP_SERVER: ${{ secrets.FTP_HOST }}
         FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
         FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        METHOD: sftp
+        METHOD: ftp
         PORT: ${{ secrets.FTP_PORT}}
         REMOTE_DIR: www
         ARGS: --exclude-glob=.github* --exclude-glob=.git* --exclude-glob=*.MD
