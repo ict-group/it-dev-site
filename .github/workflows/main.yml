@@ -5,15 +5,12 @@ jobs:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    
+    - uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 1
     - name: FTP-Deploy-Action
-      uses: SamKirkland/FTP-Deploy-Action@2.0.0
-      env:
-        FTP_SERVER: ${{ secrets.FTP_HOST }}
-        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        METHOD: ftp
-        PORT: ${{ secrets.FTP_PORT}}
-        REMOTE_DIR: www
-        ARGS: --exclude-glob=.github* --exclude-glob=.git* --exclude-glob=*.MD --exclude-glob=.git*
+      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      with:
+        ftp-server: ${{ secrets.FTP_HOST }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
